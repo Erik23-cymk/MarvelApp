@@ -24,7 +24,8 @@ class CharactersActivity : AppCompatActivity() {
         viewModel.charactersLiveData.observe(this, Observer {
             it?.let { characters ->
                 with(recyclerCharacters) {
-                    layoutManager = LinearLayoutManager(this@CharactersActivity, RecyclerView.VERTICAL, false)
+                    layoutManager =
+                        LinearLayoutManager(this@CharactersActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
                     adapter = CharactersAdapter(characters)
                 }
