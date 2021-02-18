@@ -8,7 +8,7 @@ import com.example.marvelheroesestudo.R
 
 class SplashScreenActivity : AppCompatActivity() {
 
-    private val SPLASHTIME: Long = 3000
+    private val Splash: Long = 3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +18,6 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(Intent (this, CharactersActivity::class.java))
             finish()
 
-        }, SPLASHTIME)
+        }, Splash)
     }
 }
