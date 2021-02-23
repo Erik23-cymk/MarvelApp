@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroesestudo.R
 import kotlinx.android.synthetic.main.activity_characters.*
+import presentation.details.CharacterDetailsActivity
 
 class CharactersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,11 @@ class CharactersActivity : AppCompatActivity() {
                             RecyclerView.VERTICAL,
                             false)
                     setHasFixedSize(true)
-                    adapter = CharactersAdapter(characters)
+                    adapter = CharactersAdapter(characters) { character ->
+                        CharacterDetailsActivity.getStartIntent(this@CharactersActivity, character.title,)
+
+
+                    }
                 }
             }
         })

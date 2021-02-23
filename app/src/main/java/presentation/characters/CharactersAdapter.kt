@@ -10,7 +10,8 @@ import kotlinx.android.synthetic.main.item_character.view.*
 
 
 class CharactersAdapter(
-        val characters: List<Character>
+      private  val characters: List<Character>,
+      val onItemClickListener: ((character: Character) -> Unit)
 ) : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
