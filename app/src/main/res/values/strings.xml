@@ -3,7 +3,7 @@
 
     <string name="characters_title">Characters</string>
 
-    <!-- Book Details Activity -->
+
     <string name="character_details_title_label">Title </string>
     <string name="character_details_description_label">Description</string>
 </resources>

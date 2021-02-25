@@ -8,10 +8,8 @@ import com.example.marvelheroesestudo.R
 import data.model.Character
 import kotlinx.android.synthetic.main.item_character.view.*
 
-
 class CharactersAdapter(
-      private  val characters: List<Character>,
-      val onItemClickListener: ((character: Character) -> Unit)
+      private  val characters: List<Character>
 ) : RecyclerView.Adapter<CharactersAdapter.CharactersViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
@@ -34,6 +32,7 @@ class CharactersAdapter(
         fun bindView(character: Character) {
             title.text = character.title
             author.text = character.author
+
 
         }
     }

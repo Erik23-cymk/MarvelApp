@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroesestudo.R
 import kotlinx.android.synthetic.main.activity_characters.*
-import presentation.details.CharacterDetailsActivity
 
 class CharactersActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,18 +20,17 @@ class CharactersActivity : AppCompatActivity() {
         val viewModel: CharactersViewModel =
             ViewModelProviders.of(this).get(CharactersViewModel::class.java)
         viewModel.charactersLiveData.observe(this, Observer {
-            it?.let { characters ->
+            it?.let {characters ->
                 with(recyclerCharacters) {
-                    layoutManager =
-                        LinearLayoutManager(this@CharactersActivity,
-                            RecyclerView.VERTICAL,
-                            false)
+                    layoutManager = LinearLayoutManager(
+                        this@CharactersActivity,
+                        RecyclerView.VERTICAL,
+                        false
+                    )
                     setHasFixedSize(true)
-                    adapter = CharactersAdapter(characters) { character ->
-                        CharacterDetailsActivity.getStartIntent(this@CharactersActivity, character.title,)
+                    adapter = CharactersAdapter(characters)
 
 
-                    }
                 }
             }
         })

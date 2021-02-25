@@ -17,6 +17,8 @@ class CharactersViewModel : ViewModel() {
             Character("Title1", "Author 1"),
             Character("Title2", "Author 2"),
             Character("Title3", "Author 3")
+
+
         )
     }
 }
