@@ -17,6 +17,7 @@ class CharactersActivity : AppCompatActivity() {
         toolbarMain.title = getString(R.string.characters_title)
         setSupportActionBar(toolbarMain)
 
+
         val viewModel: CharactersViewModel =
             ViewModelProviders.of(this).get(CharactersViewModel::class.java)
         viewModel.charactersLiveData.observe(this, Observer {
@@ -29,11 +30,10 @@ class CharactersActivity : AppCompatActivity() {
                     )
                     setHasFixedSize(true)
                     adapter = CharactersAdapter(characters)
-
-
                 }
             }
         })
         viewModel.getCharacters()
     }
+
 }

@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelheroesestudo.R
 import data.model.Character
-import kotlinx.android.synthetic.main.item_character.view.*
+
+import kotlinx.android.synthetic.main.item_characters.view.*
 
 class CharactersAdapter(
     private val characters: List<Character>
@@ -16,8 +17,9 @@ class CharactersAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_character, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_characters, parent, false)
         return CharactersViewHolder(itemView)
+        
     }
 
     override fun getItemCount() = characters.count()
@@ -29,11 +31,15 @@ class CharactersAdapter(
     class CharactersViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val title = itemView.textTitle
-        private val author = itemView.textAuthor
+
+
+
+
+
 
         fun bindView(character: Character) {
             title.text = character.title
-            author.text = character.author
+
 
             title.setOnClickListener {
                 val intent = Intent(it.context, CharacterDetailActivity::class.java)
